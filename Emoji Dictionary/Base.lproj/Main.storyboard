@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Gj-Po-M9D">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Emoji_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Emoji_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8kS-sZ-2S9">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -37,17 +37,20 @@
                             <constraint firstItem="8kS-sZ-2S9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ld8-Uu-RIH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="7T3-Fe-osb"/>
                     <connections>
                         <outlet property="tableView" destination="8kS-sZ-2S9" id="UGO-xn-If3"/>
+                        <segue destination="Wae-4E-SBu" kind="show" identifier="moveSegue" id="Cj8-gz-Vpk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1014" y="47"/>
         </scene>
-        <!--View Controller-->
+        <!--Definition View Controller-->
         <scene sceneID="jXU-LS-acw">
             <objects>
-                <viewController id="Wae-4E-SBu" sceneMemberID="viewController">
+                <viewController id="Wae-4E-SBu" customClass="DefinitionViewController" customModule="Emoji_Dictionary" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZXE-zh-zjG"/>
                         <viewControllerLayoutGuide type="bottom" id="HVt-Dd-gAp"/>
@@ -65,7 +68,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rdq-ms-qPR">
-                                <rect key="frame" x="78" y="121" width="218" height="239"/>
+                                <rect key="frame" x="78" y="165" width="218" height="239"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eZk-Fl-G4r">
                                         <rect key="frame" x="0.0" y="0.0" width="218" height="239"/>
@@ -123,7 +126,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ferris Wheel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZP-wX-ckU">
-                                <rect key="frame" x="139.5" y="430" width="96.5" height="20.5"/>
+                                <rect key="frame" x="139.5" y="474" width="96.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -140,10 +143,32 @@
                             <constraint firstItem="ZZP-wX-ckU" firstAttribute="centerX" secondItem="s69-8M-UhG" secondAttribute="centerX" id="dGc-X3-pFm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="definitionLable" destination="ZZP-wX-ckU" id="Z9W-ff-sBf"/>
+                        <outlet property="emojiLabel" destination="E1r-E5-RcM" id="bgG-zz-ZPR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddb-ac-IBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="48"/>
+            <point key="canvasLocation" x="1792.8" y="47.226386806596707"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LHc-xu-ii1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Gj-Po-M9D" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1JT-FO-1pI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cEe-wp-VOf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5T0-sj-JEV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="190" y="46"/>
         </scene>
     </scenes>
 </document>
